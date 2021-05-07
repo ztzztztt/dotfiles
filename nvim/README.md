@@ -1,7 +1,7 @@
-#### **nvim**
+### **nvim**
 my nvim config
 
-##### plugins
+#### plugins
 
 ```text
 " 主题
@@ -36,6 +36,40 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 - Yggdroot/indentLine
 
 - neoclide/coc.nvim
+
+
+#### plugins
+
+国内下载github.com的资源比较慢，可以修改plug.vim来使用镜像加速
+
+- Step 1
+
+  ```text
+  let fmt = get(g:, 'plug_url_format', 'https://git::@github.com/%s.git')
+  
+  ->
+  
+  let fmt = get(g:, 'plug_url_format', 'https://git::@hub.fastgit.org/%s.git')
+  ```
+
+- Step 2
+
+  ```text
+  let plug.uri = substitute(plug.uri,
+      \ '^https://git::@github\.com', 'https://github.com', '')
+      
+  ->
+  
+  let plug.uri = substitute(plug.uri,
+      \ '^https://git::@hub.fastgit\.org', 'https://hub.fastgit.org', '')
+  ```
+
+- Step 3
+
+  ```bash
+  # 删除plugged下的文件，重新执行PlugInstall安装插件
+  PlugInstall
+  ```
 
   
 
