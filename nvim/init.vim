@@ -206,13 +206,17 @@ let g:indent_guides_start_level     = 2
 
 
 " ============================ coc ======================================
-
+" coc-pyright       python支持
+" coc-snippets      python提供的snippets
+" coc-highlight     高亮
+" coc-git           git支持
+" coc-sh            bash 支持
+" coc-yaml          yaml
 let g:coc_global_extensions = [
-    \ 'coc-pyright',     # python支持
-    \ 'coc-snippets',    # python提供的snippets
-    \ 'coc-highlight',   # 高亮
-    \ 'coc-git',         # git支持
-    \ 'coc-sh',          # bash 支持
-    \ 'coc-yaml',        # yaml
-    \ 'coc-'
-    ]
+    \ 'coc-pyright',     
+    \ 'coc-snippets',
+    \ 'coc-highlight',
+    \ 'coc-git',
+    \ 'coc-sh',
+    \ 'coc-yaml',
+    \ ]
