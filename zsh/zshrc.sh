@@ -18,14 +18,21 @@ zinit wait="1" lucid for \
     agkozak/zsh-z
 
 # 自动建议
-zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
-zinit light zsh-users/zsh-autosuggestions
+# zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
+# zinit light zsh-users/zsh-autosuggestions
+zinit ice lucid wait="0" atload='_zsh_autosuggest_start' from="gitee.com"
+zinit light ztzztztt/zsh-autosuggestions
 
-zinit light zdharma/fast-syntax-highlighting 
+# 语法高亮
+# zinit light zdharma/fast-syntax-highlighting 
+zinit ice from="gitee.com"
+zinit light lomot/fast-syntax-highlighting
 
 # 补全
-zinit ice lucid wait="0"
-zinit light zsh-users/zsh-completions 
+# zinit ice lucid wait="0"
+# zinit light zsh-users/zsh-completions 
+zinit ice lucid wait="0" from="gitee.com"
+zinit light who7708/zsh-completions
 
 # 加载 OMZ 框架的插件
 # 长命令在命令前部添加上sudo，按两次esc
