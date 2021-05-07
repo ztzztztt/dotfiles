@@ -30,6 +30,7 @@ zinit light zsh-users/zsh-completions
 # 加载 OMZ 框架的插件
 # 长命令在命令前部添加上sudo，按两次esc
 # zinit snippet OMZ::plugins/sudo/sudo.plugin.zsh
+zinit snippet 'https://gitee.com/ztzztztt/ohmyzsh/raw/master/plugins/sudo/sudo.plugin.zsh'
     
 # ===== (可选)加载了一堆二进制程序 =====
 # 加载这些插件，需要使用apt install安装过这些命令

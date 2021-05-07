@@ -1,4 +1,4 @@
-全部安装
+### 全部安装
 
 ```bash
 git clone https://github.com/ryanoasis/nerd-fonts.git --depth 1
