@@ -73,3 +73,22 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   
 
+### nodejs、npm安装配置
+
+```bash
+# 下载nodejs
+wget https://npm.taobao.org/mirrors/node/v14.16.1/node-v14.16.1-linux-x64.tar.xz
+# 创建文件夹
+sudo mkdir /usr/local/lib/nodejs
+# 解压
+sudo tar -xvf node-v14.16.1-linux-x64.tar.xz -C /usr/local/lib/nodejs
+# 配置环境变量, 添加到zshrc中
+export PATH=$PATH:/usr/local/lib/nodejs/node-v14.16.1-linux-x64/bin
+# or
+# 或者使用如下的软连接
+sudo ln -s /usr/local/lib/nodejs/node-v14.16.1-linux-x64/bin/node /usr/bin/node
+sudo ln -s /usr/local/lib/nodejs/node-v14.16.1-linux-x64/bin/npm /usr/bin/npm
+sudo ln -s /usr/local/lib/nodejs/node-v14.16.1-linux-x64/bin/npx /usr/bin/npx 
+
+```
+
