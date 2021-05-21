@@ -49,7 +49,7 @@ zinit as="null" wait="1" lucid from="gitee.com" for \
     
 # 加载exa的补全
 zinit ice mv="*.zsh -> _exa" as="completion"
-zinit snippet 'https://gitee.com/mirrors/exa/raw/master/completions/completions.zsh'
+zinit snippet 'https://gitee.com/mirrors/exa/raw/master/completions/zsh/_exa'
 
 # 不需要花里胡哨的 ls，我们有更花里胡哨的 exa
 DISABLE_LS_COLORS=true
