@@ -14,8 +14,8 @@ source $ZSHDIR/zinit/bin/zinit.zsh
 
 
 # ===== 加载插件 =====
-zinit wait="1" lucid for \
-    agkozak/zsh-z
+zinit wait="1" lucid from="gitee.com" for \
+    ztzztztt/zsh-z
 
 # 自动建议
 # zinit ice lucid wait="0" atload='_zsh_autosuggest_start'
@@ -48,7 +48,7 @@ zinit as="null" wait="1" lucid from="gitee.com" for \
     mv="exa* -> exa" sbin ztzztztt/exa \
     
 # 加载exa的补全
-zinit ice mv="*.zsh -> _exa" as="completion"
+zinit ice mv="* -> _exa" as="completion"
 zinit snippet 'https://gitee.com/mirrors/exa/raw/master/completions/zsh/_exa'
 
 # 不需要花里胡哨的 ls，我们有更花里胡哨的 exa
