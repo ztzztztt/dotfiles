@@ -92,3 +92,14 @@ case $THEME in
         zinit snippet 'https://gitee.com/djdjhdhdjue/agnoster-zsh-theme/raw/master/agnoster.zsh-theme'
         ;;
 esac
+
+
+# local bin
+export PATH=$PATH:$HOME/.local/bin
+
+# neovim
+alias nv="nvim"
+
+
+
+
