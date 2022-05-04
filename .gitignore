@@ -2,4 +2,6 @@
 
 tmux/plugins
 zsh/zinit
+nvim/plugin/packer_compiled.lua
+**/*.swap
 
