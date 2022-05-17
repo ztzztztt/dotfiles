@@ -6,6 +6,7 @@
 # 获取 Shell的类型
 SHELL_TYPE="${SHELL##*/}"
 RCFILE="$HOME/.${SHELL_TYPE}rc"
+# 配置环境
 ENV_PATH="$HOME/.virtualenvs"
 ENV_LIST=$(ls -l $ENV_PATH | awk '/^d/ {print $NF}')
 
@@ -35,17 +36,10 @@ lsEnvs() {
 
 
 contains() {
-    for env in [ $1 ]
-    do
-        if [ $env == $2 ]; then
-            echo "Y"
-            return 0
-        fi
-    done
-    echo "N"
-    return 1
+    array=$1
+    var=$2
+    echo "${array[@]}" | grep -wq "$var" &&  echo "Yes" && return 1 || (echo "No" && return 0)
 }
-
 
 showTips() {
   echo "Usage: bash envs.sh [args]
@@ -69,7 +63,7 @@ if [[ $# -eq 1 ]]; then
 # 两命令参数
 elif [[ $# -eq 2 ]]; then
     if [[ $1 == "-r" ]] || [[ $1 == "--remove" ]]; then
-        if [[ $(contains "${ENV_LIST[@]}" "$2") == "Y" ]]; then
+        if [[ $(contains "$ENV_LIST" "$2") == "Yes" ]]; then
             echo "Remove Virtual Environment: $2"
             rm -rf "$ENV_PATH/$2"
             refreshEnvs
@@ -77,8 +71,7 @@ elif [[ $# -eq 2 ]]; then
             echo "$2 Environments is not exist"
         fi
     elif [[ $1 == "-a" ]] || [[ $1 == "--add" ]]; then
-        # if environments list contain this name, return y else return n
-        if [[ $(contains "${ENV_LIST[@]}" "$2") == "N" ]]; then
+        if [[ $(contains "$ENV_LIST" "$2") == "No" ]]; then
             virtualenv $ENV_PATH/$2
             refreshEnvs
         else
@@ -91,5 +84,3 @@ elif [[ $# -eq 2 ]]; then
 else
     showTips
 fi
-
-
