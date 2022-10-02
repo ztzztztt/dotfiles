@@ -56,7 +56,7 @@ if [[ $# -eq 1 ]]; then
         echo "Fresh Virtual Environments"
         refreshEnvs
     elif [[ $1 == "-l" ]] || [[ $1 == "--list" ]]; then
-    	lsEnvs
+        lsEnvs
     else
         showTips
     fi

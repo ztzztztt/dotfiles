@@ -12,11 +12,11 @@ require('toggleterm').setup{
     hide_numbers = true,            -- hide the number column in toggleterm buffers
     shade_filetypes = {},
     shade_terminals = true,
-    shading_factor = '2',    -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+    shading_factor = '2',           -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
     start_in_insert = true,
     insert_mappings = true,         -- whether or not the open mapping applies in insert mode
     persist_size = true,
-    direction = 'horizontal',
+    direction = 'float',              -- 'vertical' | 'horizontal' | 'tab' | 'float'
     close_on_exit = true,           -- close the terminal window when the process exits
     shell = vim.o.shell,            -- change the default shell
     -- This field is only relevant if direction is set to 'float'
@@ -30,7 +30,7 @@ require('toggleterm').setup{
 -- Treesitter
 require("nvim-treesitter.install").prefer_git = true
 for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
-  config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://github.ztzztztt.workers.dev/https://github.com/")
+  config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://gh.api.99988866.xyz/https://github.com/")
 end
 require('nvim-treesitter.configs').setup {
     -- One of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -106,8 +106,24 @@ dap.configurations.python = {
     },
 }
 require("dapui").setup({
-    sidebar = {
-        size = 40
+    layouts = {
+        {
+          elements = {
+            'scopes',
+            'breakpoints',
+            'stacks',
+            'watches',
+          },
+          size = 40,
+          position = 'left',
+        }, {
+          elements = {
+            'repl',
+            'console',
+          },
+          size = 10,
+          position = 'bottom',
+        },
     }
 })
 

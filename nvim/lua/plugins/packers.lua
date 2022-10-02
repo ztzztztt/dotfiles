@@ -6,12 +6,15 @@ local use_packer_mirrors = true
 -- vim.cmd [[ packadd packer.nvim ]]
 local status, packer = pcall(require, "packer")
 
-local proxy_url = "https://github.ztzztztt.workers.dev/"
+-- local proxy_url = "https://github.ztzztztt.workers.dev/"
+local proxy_url = "https://gh.api.99988866.xyz/"
 local packer_repo_prefix = "https://github.com/%s"
 
 if use_packer_mirrors then
     packer_repo_prefix = proxy_url .. packer_repo_prefix
 end
+
+-- print(packer_repo_prefix)
 
 
 if not status then
@@ -94,5 +97,6 @@ return packer.startup(function()
     use { 'nvim-telescope/telescope-media-files.nvim' }
 
     -- colorschema
-    use 'NTBBloodbath/doom-one.nvim'
+    -- use 'NTBBloodbath/doom-one.nvim'
+    use { 'folke/tokyonight.nvim' }
 end)
