@@ -99,4 +99,7 @@ return packer.startup(function()
     -- colorschema
     -- use 'NTBBloodbath/doom-one.nvim'
     use { 'folke/tokyonight.nvim' }
+
+    -- Code Formatter
+    use { 'mhartington/formatter.nvim' }
 end)

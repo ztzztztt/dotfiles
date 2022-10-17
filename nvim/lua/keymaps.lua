@@ -80,3 +80,13 @@ map('n', '<leader>dr', '<CMD>lua require"dapui".toggle()<CR>', opts)
 -- neogen
 map("n", "<leader>nf", "<CMD>lua require('neogen').generate({ type = 'func' })<CR>", opts)
 map("n", "<leader>nc", "<CMD>lua require('neogen').generate({ type = 'class' })<CR>", opts)
+
+
+-- Formatter
+map("n", "<leader>f", ":Format<CR>", opts)
+map("i", "<leader>f", ":Format<CR>", opts)
+map("v", "<leader>f", ":Format<CR>", opts)
+
+map("n", "<leader>F", ":FormatWrite<CR>", opts)
+map("i", "<leader>F", ":FormatWrite<CR>", opts)
+map("v", "<leader>F", ":FormatWrite<CR>", opts)
