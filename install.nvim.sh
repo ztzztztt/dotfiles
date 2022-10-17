@@ -12,4 +12,6 @@
 # sudo apt install neovim
 # install $ configure nvim
 
+# code formatter backend
+pip install black
 bash etc/nvim.sh
