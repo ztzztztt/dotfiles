@@ -29,15 +29,28 @@ autocmd({ "BufReadPost" }, {
     end
 })
 
+local snippet_root = "~/.config/nvim/snippet/"
+
+usercmd(
+    "OpenUserSnippetFile",
+    function(ctx)
+        local snippet_file_name = vim.bo.filetype .. ".json"
+        local snippet_file_path = snippet_root .. snippet_file_name
+        vim.cmd(":e %s"):format(snippet_file_path)
+    end,
+    {
+        desc = "Open user snippet file from current filetype"
+    }
+)
 
 usercmd(
     "OpenUserSnippetPackage", 
     function(ctx) 
         local snippet_file_name = "package.json"
-        local snippet_file_path = "~/.config/nvim/snippet/" .. snippet_file_name
+        local snippet_file_path = snippet_root .. snippet_file_name
         vim.cmd(":e %s"):format(snippet_file_path)
     end, 
     { 
-        desc = "Open User snippet package.json file"
+        desc = "Open user snippet package.json file"
     }
 )
