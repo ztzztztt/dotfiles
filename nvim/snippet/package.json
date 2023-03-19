@@ -6,7 +6,7 @@
     "contributes": {
         "snippets": [{
             "language": "python",
-            "path": "./snippets/snippet.json"
+            "path": "./snippets/python.json"
         }]
     }
 }

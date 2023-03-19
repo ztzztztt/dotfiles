@@ -7,7 +7,7 @@ local use_packer_mirrors = true
 local status, packer = pcall(require, "packer")
 
 -- local proxy_url = "https://github.ztzztztt.workers.dev/"
-local proxy_url = "https://gh.api.99988866.xyz/"
+local proxy_url = "https://ghproxy.com/"
 local packer_repo_prefix = "https://github.com/%s"
 
 if use_packer_mirrors then

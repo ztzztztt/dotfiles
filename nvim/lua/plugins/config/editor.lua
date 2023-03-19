@@ -30,13 +30,13 @@ require('toggleterm').setup{
 -- Treesitter
 require("nvim-treesitter.install").prefer_git = true
 for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
-  config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://gh.api.99988866.xyz/https://github.com/")
+  config.install_info.url = config.install_info.url:gsub("https://github.com/", "https://ghproxy.com/https://github.com/")
 end
 require('nvim-treesitter.configs').setup {
     -- One of "all", "maintained" (parsers with maintainers), or a list of languages
     -- ensure_installed = "maintained",
     ensure_installed = {
-        "python", "yaml", "bash", "html", "json"
+        "python", "yaml", "bash", "html", "json", "lua", 
     },
     -- Install languages synchronously (only applied to `ensure_installed`)
     sync_install = false,
