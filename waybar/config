@@ -7,23 +7,9 @@
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": [
-        "custom/logo",
-        "wlr/workspaces",
-        "hyprland/window"
-    ],
-    "modules-center": [
-        "tray",
-    ],
-    "modules-right": [
-        "cpu",
-        "memory",
-        "pulseaudio",
-        "clock#date" , 
-        "clock", 
-        "tray", 
-        "custom/power"
-    ],
+    "modules-left": [ "custom/logo", "wlr/workspaces", "hyprland/window" ],
+    "modules-center": [ "tray", ],
+    "modules-right": [ "network", "cpu", "memory", "pulseaudio", "clock", "custom/power" ],
     "wlr/workspaces": {
         "on-click": "activate",
         "format": "{name}",
@@ -35,23 +21,42 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip": false,
-        "format": "  {:%H:%M}"
+        "format": " {:%a %Y-%m-%d %R}"
     },
-    "clock#date": {
-        "format": "   {:%a %d %b}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "network": {
+        "tooltip": false,
+        "format": "{ifname}",
+        "format-wifi": " {essid}",
+        "format-icons": {
+            "wifi": [" "],
+            "ethernet": [" "],
+            "disconnected": [""]
+        }
     },
     "cpu": {
-        "format": "  {usage}%",
-        "tooltip": true,
+        "format": " {usage}%",
+        "tooltip": false,
         "interval": 1
     },
     "memory": {
-        "format": "  {used:0.2f}G"
+        "format": " {used:0.2f}G",
+        "tooltip": false
+    },
+    "battery": {
+        "bat": "BAT0",
+        "full-at": 95,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "tooltip": false,
+        "format": "{icon}{capacity}%",
+        "format-charging": "⚡ {icon} {capacity}%",
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}{volume}%",
         "format-muted": "  muted",
         "format-icons": {
             "headphone": " ",
@@ -59,13 +64,15 @@
             "headset": "",
             "phone": "",
             "portable": "",
-            "car": "",
+            "car": " ",
             "default": [" ", " ", " "]
         },
+        "scroll-step": 2,
+        "tooltip": false,
         "on-click": "pavucontrol"
     },
     "custom/logo": {
-		"format": "",
+		"format": " ",
 		"tooltip": false
 	},
     "custom/sep": {
