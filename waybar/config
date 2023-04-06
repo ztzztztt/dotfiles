@@ -7,9 +7,9 @@
     "gtk-layer-shell": true,
     "passthrough": false,
     "fixed-center": true,
-    "modules-left": [ "custom/logo", "wlr/workspaces", "hyprland/window" ],
-    "modules-center": [ "tray", ],
-    "modules-right": [ "network", "cpu", "memory", "pulseaudio", "clock", "custom/power" ],
+    "modules-left": [ "custom/logo", "clock", "wlr/workspaces", ],
+    "modules-center": [ "hyprland/window" ],
+    "modules-right": [ "network", "cpu", "memory", "pulseaudio", "tray", "custom/power" ],
     "wlr/workspaces": {
         "on-click": "activate",
         "format": "{name}",
@@ -18,20 +18,25 @@
         "active-only": false
     },
     "tray": {
-        "spacing": 10
+        "spacing": 10,
+        "icon-size": 18
     },
     "clock": {
-        "format": " {:%a %Y-%m-%d %R}"
+        "format": "{: %a %Y-%m-%d  %R}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "network": {
-        "tooltip": false,
-        "format": "{ifname}",
-        "format-wifi": " {essid}",
+        "format-wifi": "{icon} {signalStrength}%",
+        "format-ethernet": "{icon} Connected",
+        "format-linked": "{ifname}(No IP)",
+        "format-disconnected": "Disconnected ",
         "format-icons": {
-            "wifi": [" "],
-            "ethernet": [" "],
+            "wifi": [""],
+            "ethernet": [""],
             "disconnected": [""]
-        }
+        },
+        "tooltip-format-wifi": "{essid} - {ifname} via {gwaddr}",
+        "tooltip-format-ethernet": "{ipaddr} on {ifname}"
     },
     "cpu": {
         "format": " {usage}%",
@@ -56,27 +61,25 @@
         "format-icons": [" ", " ", " ", " ", " "]
     },
     "pulseaudio": {
-        "format": "{icon}{volume}%",
-        "format-muted": "  muted",
+        "format": "{icon} {volume}%",
+        "format-muted": " muted",
         "format-icons": {
-            "headphone": " ",
-            "hands-free": "",
-            "headset": "",
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
-            "car": " ",
-            "default": [" ", " ", " "]
+            "car": "",
+            "default": ["", "", ""]
         },
-        "scroll-step": 2,
         "tooltip": false,
-        "on-click": "pavucontrol"
+        "scroll-step": 2,
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 2",
+        "on-scroll-down": "pamixer -d 2"
     },
     "custom/logo": {
 		"format": " ",
-		"tooltip": false
-	},
-    "custom/sep": {
-		"format": "|",
 		"tooltip": false
 	},
     "custom/power": {

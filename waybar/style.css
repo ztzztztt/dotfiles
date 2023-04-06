@@ -3,13 +3,23 @@
   /* font-family: Euclid Circular A; */
   font-family: Hack Nerd Font Mono;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
 }
 
 window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
-  background-color: #181825;
+  /*background-color: #181825;*/
+  background-color: rgba(21, 18, 27, 0);
+  color: #cdd6f4;
 }
 
 window#waybar.hidden {
@@ -17,19 +27,23 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background-color: transparent;
+  min-height: 0;
+  border-radius: 4px;
+  padding: 0px;
+  margin: 3px 0px;
+  background-color: #1e1e2e;
+  /*background-color: transparent;*/
 }
 
 #workspaces button {
   all: initial;
   min-width: 0;
-  box-shadow: inset 0 -3px transparent;
-  padding: 0 18px;
-  margin: 4px 3px;
   min-height: 0;
+  padding: 0 9px;
   border-radius: 4px;
-  background-color: #1e1e2e;
   color: #cdd6f4;
+  background-color: #1e1e2e;
+  box-shadow: inset 0 -3px transparent;
 }
 
 #workspaces button:hover {
@@ -48,26 +62,39 @@ window#waybar.hidden {
   background-color: #f38ba8;
 }
 
+#custom-logo, 
 #clock,
-#pulseaudio,
-#custom-logo,
-#custom-power,
+#window,
 #network,
 #cpu,
+#memory,
+#pulseaudio,
 #tray,
-#window,
-#memory {
+#custom-power {
   min-height: 0;
   border-radius: 4px;
-  padding: 0px 12px;
-  margin: 4px 3px;
-  background-color: #1e1e2e;
+  padding: 0px 10px;
+  margin: 3px 0px;
+  background: #1e1e2e;
+  border: 1px solid #181825;
 }
 
-#custom-sep {
-  padding: 0px;
-  color: #585b70;
+#custom-logo {
+  color: #87b4fa;
+  margin-left: 6px;
+  margin-right: 0px;
+  padding: 0px 0px 0px 10px;
+  font-size: 16px;
 }
+
+#clock {
+  color: #89b4fa;
+}
+
+#window {
+  color: #a6e3a1;
+}
+
 #network {
   color: #94e2d5;
 }
@@ -80,35 +107,27 @@ window#waybar.hidden {
   color: #cba6f7;
 }
 
-#clock {
-  color: #89b4fa;
-}
-
-#clock.date {
-  color: #74c7ec;
-}
-
-#window {
-  color: #a6e3a1;
-}
-
 #pulseaudio {
   color: #b4befe;
 }
 
-#custom-logo {
-  color: #89b4fa;
+#pulseaudio.muted {
+  color: #a6adc8;
+}
+
+#tray {
+    min-width: 0;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 #custom-power {
   color: #f38ba8;
+  margin-left: 0px;
   margin-right: 6px;
-  padding-right: 9px;
-  font-size: 14px;
-}
-
-#pulseaudio.muted {
-  color: #a6adc8;
+  /* top right bottom left */
+  padding: 0px 0px 0px 10px;
+  font-size: 16px;
 }
 
 @keyframes blink {
@@ -118,6 +137,3 @@ window#waybar.hidden {
   }
 }
 
-tooltip {
-  border-radius: 8px;
-}
