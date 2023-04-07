@@ -19,7 +19,7 @@
     },
     "tray": {
         "spacing": 10,
-        "icon-size": 18
+        "icon-size": 16
     },
     "clock": {
         "format": "{: %a %Y-%m-%d  %R}",

@@ -72,6 +72,7 @@ window#waybar.hidden {
 #tray,
 #custom-power {
   min-height: 0;
+  font-size: 16px;
   border-radius: 4px;
   padding: 0px 10px;
   margin: 3px 0px;
@@ -93,6 +94,7 @@ window#waybar.hidden {
 
 #window {
   color: #a6e3a1;
+  margin: 3px 10px;
 }
 
 #network {
@@ -109,6 +111,7 @@ window#waybar.hidden {
 
 #pulseaudio {
   color: #b4befe;
+  margin-right: 0px;
 }
 
 #pulseaudio.muted {
@@ -117,8 +120,9 @@ window#waybar.hidden {
 
 #tray {
     min-width: 0;
-    border-radius: 10px;
-    margin-right: 10px;
+    border-radius: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #custom-power {
