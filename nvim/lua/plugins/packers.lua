@@ -84,7 +84,14 @@ return packer.startup(function()
     use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     use { 'theHamsta/nvim-dap-virtual-text' }
     -- Treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 
+        'nvim-treesitter/nvim-treesitter', 
+        run = function()
+            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+            ts_update()
+        end,
+    }
+
     -- Tree
     use { 'kyazdani42/nvim-tree.lua', requires = { 'kyazdani42/nvim-web-devicons' } }
     -- Lualine
