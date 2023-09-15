@@ -12,6 +12,6 @@ if ( Test-Path $PSPATH ) {
 
 Copy-Item ".\envs.ps1" -Destination $PSPATH
 
-write-output '{"Microsoft.PowerShell:ExecutionPolicy":"RemoteSigned"}' | out-file -filepath "$PSPATH\powershell.config.json"
+write-output '{"Microsoft.PowerShell:ExecutionPolicy":"RemoteSigned"}' | out-file -filepath "$PSPATH\powershell.config.json" -Force
 
-write-output "Set-Alias v $PSPATH\envs.ps1" | out-file -filepath "$PSPATH\Microsoft.PowerShell_profile.ps1"
+write-output "Set-Alias v $PSPATH\envs.ps1" | out-file -filepath "$PSPATH\Microsoft.PowerShell_profile.ps1" -Force
