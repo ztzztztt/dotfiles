@@ -4,6 +4,12 @@
 
 [string] $PSPATH="$HOME\Documents\PowerShell"
 
+if ( Test-Path $PSPATH ) {
+    echo "$PSPATH already exists"
+} else {
+    md $PSPATH
+}
+
 Copy-Item ".\envs.ps1" -Destination $PSPATH
 
 write-output '{"Microsoft.PowerShell:ExecutionPolicy":"RemoteSigned"}' | out-file -filepath "$PSPATH\powershell.config.json"
