@@ -7,7 +7,7 @@
 if ( Test-Path $PSPATH ) {
     echo "$PSPATH already exists"
 } else {
-    md $PSPATH
+    New-Item -Path "$HOME\Documents" -Name "PowerShell" -ItemType "directory"
 }
 
 Copy-Item ".\envs.ps1" -Destination $PSPATH
